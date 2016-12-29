@@ -19,6 +19,9 @@ app.get("/video", function(req, res) {
     console.log("url",url);
     youtubeInfo(url,function(info){
     	res.json(info);
+        fs.unlink('./myvideo.mp4',function(err){
+            console.log(err);
+        });
     })
 });
 
