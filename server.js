@@ -19,9 +19,9 @@ app.get("/video", function(req, res) {
     console.log("url",url);
     youtubeInfo(url,function(info){
     	res.json(info);
-        fs.unlink('./myvideo.mp4',function(err){
-            console.log(err);
-        });
+        // fs.unlink('./myvideo.mp4',function(err){
+        //     console.log(err);
+        // });
     })
 });
 
@@ -44,7 +44,7 @@ function youtubeInfo(url,callback) {
         
     });
 
-    video.pipe(fs.createWriteStream('myvideo.mp4'));
+    // video.pipe(fs.createWriteStream('myvideo.mp4'));
 }
 
 app.listen(port, function() {
