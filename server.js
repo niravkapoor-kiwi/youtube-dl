@@ -7,13 +7,21 @@ var port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 var url = "",infoJson;
 
-app.post("/api", function(req, res) {
-    url = req.body.url;
+// app.get("/users",function(req,res){
+// 	var url = req.query;
+// 	console.log(url);
+// 	res.send(url)
+// })
+
+app.get("/video", function(req, res) {
+    // url = req.body.url;
+    url = req.query.url;
     console.log("url",url);
     youtubeInfo(url,function(info){
     	res.json(info);
     })
 });
+
 var fs = require("fs");
 function youtubeInfo(url,callback) {
     var youtubedl = require('youtube-dl');
