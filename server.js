@@ -47,7 +47,7 @@ function youtubeInfo(url,callback) {
     // video.pipe(fs.createWriteStream('myvideo.mp4'));
 }
 
-app.listen(port, function() {
+app.listen(process.env.PORT || 3000, function() {
     console.log('Node app is  running  on port', port);
 });
 
